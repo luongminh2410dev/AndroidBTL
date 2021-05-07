@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Study App</string>
+    <string name="title_activity_contact_us">Map</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title">Study Application Vietnam</string>
+    <string name="title_2">Công ty vô trách nhiệm 2 thành viên Đức Thọ</string>
+    <string name="user_name">Tài khoản</string>
+    <string name="password">Mật khẩu</string>
+    <string name="save_login">Lưu thông tin đăng nhập</string>
+    <string name="login">Đăng nhập</string>
+    <string name="exit">Thoát</string>
+    <string name="home">Trang chủ</string>
+    <string name="lesson">Các bài học</string>
+    <string name="exam">Bài làm</string>
+    <string name="profile">Thông tin của tôi</string>
+    <string name="contact">Hỗ trợ</string>
+    <string name="setting">Cài đặt</string>
+    <string name="course">Khoá học</string>
+    <string name="rank">Bảng xếp hạng</string>
+    <string name="statistic">Thống kê</string>
+    <string name="streak">Chuỗi</string>
+    <string name="totalpoint">Tổng điểm</string>
+    <string name="sex">Giới tính:</string>
+    <string name="Male">Nam</string>
+    <string name="Female">Nữ</string>
+    <string name="login_fail">Sai tài khoản hoặc mật khẩu!</string>
+    <string name="hotline">Đường dây nóng:</string>
+    <string name="address">Địa chỉ: Số 3 - Cầu Giấy, Hà Nội, Việt Nam</string>
+    <string name="name_user">Họ tên:</string>
+    <string name="name_account">Tên tài khoản:</string>
+    <string name="btn_edit">Chỉnh sửa</string>
+    <string name="btn_logout">Đăng xuất</string>
+    <string name="title_math">Chọn cấp độ</string>
+    <string name="correct">Chính xác</string>
+    <string name="incorrect">Không chính xác</string>
+    <string name="hint_answer">Trả lời...</string>
+    <string name="btn_confirm">Xác nhận</string>
+    <string name="tv_choose_language">Thay đổi ngôn ngữ:</string>
+    <string name="notification">Thông báo</string>
+    <string name="yes">Đồng ý</string>
+    <string name="no">Hủy</string>
+    <string name="ntf_course_done">Bạn đã hoàn thành khóa học, bạn có muốn làm lại?</string>
+    <string name="ntf_change_language">Ứng dụng phải khởi động lại, bạn chắc chắn chứ?</string>
+
+
+</resources>
