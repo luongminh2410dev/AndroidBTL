@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -44,5 +45,11 @@ public class CourseAdapter extends ArrayAdapter {
         tv.setText(course.getNameCourse());
 
         return row;
+    }
+
+    @NonNull
+    @Override
+    public Filter getFilter() {
+        return super.getFilter();
     }
 }

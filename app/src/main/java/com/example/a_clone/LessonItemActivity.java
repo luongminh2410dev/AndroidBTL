@@ -190,7 +190,6 @@ public class LessonItemActivity extends AppCompatActivity {
         int position = course + 1;
         listLesson.clear();
         database = openOrCreateDatabase(DATABASE_NAME, MODE_PRIVATE,null);
-        Log.e("Notifi", item + " " + position + "");
         Cursor cursor = database.rawQuery("select * from question where id_lesson = '"+item+"' and id_subject = '"+position+"' ;", null);
         while (cursor.moveToNext())
         {
