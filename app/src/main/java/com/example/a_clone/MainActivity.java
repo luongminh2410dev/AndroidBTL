@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.Adapter.CourseAdapter;
+import com.example.Data.ConnectDatabase;
 import com.example.model.Course;
 import com.google.android.material.navigation.NavigationView;
 
@@ -38,11 +39,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
-    public static String DATABASE_NAME="database.sqlite";
-    public static String DB_PATH_SUFFIX = "/databases/";
-    public static SQLiteDatabase database=null;
-
+public class MainActivity extends ConnectDatabase {
     GridView gvCourse;
     CourseAdapter courseAdapter;
     ArrayList<Course> dsCourse;
@@ -54,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     ListView lvRank;
     ArrayList<String> listRank;
     ArrayAdapter<String> adapterRank;
+    SQLiteDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -232,50 +230,6 @@ public class MainActivity extends AppCompatActivity {
 //        ContentValues values = new ContentValues();
 //        values.put("totalPoint", totalPoint);
 //        database.update("ranking", values, "id=?", new String[]{id_account + ""});
-    }
-
-
-    public void xuLySaoChepCSDL() {
-        File dbFile = getDatabasePath(DATABASE_NAME);
-        if (dbFile.exists())
-        {
-            try{
-                CopyDataBaseFromAsset();
-            }catch (Exception e)
-            {
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    public void CopyDataBaseFromAsset() {
-        try {
-            InputStream myInput;
-            myInput = getAssets().open(DATABASE_NAME);
-            // Path to the just created empty db
-            String outFileName = layDuongDanLuuTru();
-            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
-            if (!f.exists())
-                f.mkdir();
-            // Open the empty db as the output stream
-            OutputStream myOutput = new FileOutputStream(outFileName);
-            // transfer bytes from the inputfile to the outputfile
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = myInput.read(buffer)) > 0) {
-                myOutput.write(buffer, 0, length);
-            }
-            // Close the streams
-            myOutput.flush();
-            myOutput.close();
-            myInput.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public String layDuongDanLuuTru() {
-        return getApplicationInfo().dataDir + DB_PATH_SUFFIX+ DATABASE_NAME;
     }
 
     @Override

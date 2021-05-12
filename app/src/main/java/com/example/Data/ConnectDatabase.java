@@ -16,8 +16,6 @@ public class ConnectDatabase extends AppCompatActivity {
     public static String DB_PATH_SUFFIX = "/databases/";
     public static SQLiteDatabase database=null;
 
-
-
     public void xuLySaoChepCSDL() {
         File dbFile = getDatabasePath(DATABASE_NAME);
         if (dbFile.exists())

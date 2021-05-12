@@ -84,7 +84,7 @@ public class ContactUsActivity extends AppCompatActivity implements OnMapReadyCa
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         // Add a marker in Sydney and move the camera
         LatLng StudyApp = new LatLng(21.02962578599788, 105.78590006840662);
-        mMap.addMarker(new MarkerOptions().position(StudyApp).title("Study Application Vietnam").snippet("Công ty cổ phần 2 thành viên Đức Thọ"));
+        mMap.addMarker(new MarkerOptions().position(StudyApp).title("Study Application Vietnam").snippet("Công ty vô trách nhiệm 2 thành viên Đức Thọ"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(StudyApp, 18));
     }
 

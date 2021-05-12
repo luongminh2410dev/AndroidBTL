@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.Data.ConnectDatabase;
+
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -23,11 +25,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class ProfileActivity extends AppCompatActivity {
-    String DATABASE_NAME="database.sqlite";
-    String DB_PATH_SUFFIX = "/databases/";
-    SQLiteDatabase database=null;
-
+public class ProfileActivity extends ConnectDatabase {
+    SQLiteDatabase database;
     ImageView imageView;
     EditText edtName, edtNameAccount, edtPass, edtEmail;
     Button btnName, btnPass, btnEmail;
@@ -132,46 +131,4 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-    private void xuLySaoChepCSDL() {
-        File dbFile = getDatabasePath(DATABASE_NAME);
-        if (dbFile.exists())
-        {
-            try{
-                CopyDataBaseFromAsset();
-            }catch (Exception e)
-            {
-                Toast.makeText(this, e.toString(), Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    private void CopyDataBaseFromAsset() {
-        try {
-            InputStream myInput;
-            myInput = getAssets().open(DATABASE_NAME);
-            // Path to the just created empty db
-            String outFileName = layDuongDanLuuTru();
-            File f = new File(getApplicationInfo().dataDir + DB_PATH_SUFFIX);
-            if (!f.exists())
-                f.mkdir();
-            // Open the empty db as the output stream
-            OutputStream myOutput = new FileOutputStream(outFileName);
-            // transfer bytes from the inputfile to the outputfile
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = myInput.read(buffer)) > 0) {
-                myOutput.write(buffer, 0, length);
-            }
-            // Close the streams
-            myOutput.flush();
-            myOutput.close();
-            myInput.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private String layDuongDanLuuTru() {
-        return getApplicationInfo().dataDir + DB_PATH_SUFFIX+ DATABASE_NAME;
-    }
 }
